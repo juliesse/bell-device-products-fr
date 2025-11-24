@@ -32,7 +32,7 @@ app.get('/list', async (req, res) => {
       const $ = cheerio.load(data);
 
       $(".card-container").each((_, el) => {
-        const name = $(el).find(".small-title").text().trim();
+        const name = $(el).find("h3.satoshi-header").text().trim();
         const link = $(el).find("a.card-link-js").attr("href");
         const img = $(el).find("img.img-responsive").attr("data-src") ||
                     $(el).find("img.img-responsive").attr("src");
